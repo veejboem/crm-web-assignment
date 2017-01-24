@@ -6,12 +6,6 @@
 # If your implementation of the Contact class is 'right', then you should see that all tests pass!
 
 require 'pry'
-# require 'sinatra'
-#
-# get '/contacts' do
-#   erb :index
-# end
-
 
 class Contact
 
