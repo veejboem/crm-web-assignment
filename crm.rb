@@ -6,5 +6,6 @@ require 'sinatra'
 
 get '/' do
   @crm_app_name = "Valerie's CRM"
+  @todays_date = "Tuesday, January 24th 2016"
   erb :index
 end
