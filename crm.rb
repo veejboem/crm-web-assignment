@@ -5,5 +5,6 @@
 require 'sinatra'
 
 get '/' do
+  @crm_app_name = "Valerie's CRM"
   erb :index
 end
