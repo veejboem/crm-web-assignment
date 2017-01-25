@@ -16,6 +16,7 @@ get '/' do
 end
 
 get '/contacts' do
+  @contact_count = Contact.all.count
   erb :contact
 end
 
