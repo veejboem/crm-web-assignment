@@ -5,10 +5,10 @@
 require_relative 'contact'
 require 'sinatra'
 
-Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
-Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
-Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+# Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
+# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
+# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   @crm_app_name = "Valerie's CRM"
@@ -85,11 +85,6 @@ put '/contacts/:id' do
   end
 end
 
-# put '/contacts/:id/edit' do
-#   @contact = Contact.find(params[:id].to_i)
-#   if @contact
-#     erb :edit_contact
-#   else
-#     raise Sinatra::NotFound
-#   end
-# end
+after do
+  ActiveRecord::Base.connection.close
+end
